@@ -4,6 +4,9 @@ import torch
 
 # parallel processing
 from pandarallel import pandarallel
+
+from experiments.quantization.memorization.attack_mem_ep.bf16_ep0 import checkpoint
+
 pandarallel.initialize(progress_bar=True, nb_workers=16)
 from tqdm import tqdm
 tqdm.pandas()
@@ -17,6 +20,7 @@ from experiments.utils.eval_metrics import em_compute, meteor_compute, bleu_comp
 import os
 
 # config
+checkpoint = "bigcode/starcoder2-15b"
 fine_tuned_model = "AISE-TUDelft/StarCoder2Java-15b_ep3"
 p_names = ["bf16", "i8", "i4"]
 p_name = p_names[1]
@@ -33,7 +37,7 @@ df = load_dataset("AISE-TUDelft/memtune-data_attack", name = "fine-tuning", spli
 df = df.select_columns(['prefix_250', 'prefix_200', 'prefix_150', 'prefix_100', 'suffix'])
 
 # load the model
-tokenizer = AutoTokenizer.from_pretrained(fine_tuned_model, padding_side='left')
+tokenizer = AutoTokenizer.from_pretrained(checkpoint, padding_side='left')
 tokenizer.pad_token = tokenizer.eos_token
 
 quantization_config = BitsAndBytesConfig(load_in_8bit=True)
