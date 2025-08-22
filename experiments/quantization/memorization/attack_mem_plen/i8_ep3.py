@@ -13,13 +13,14 @@ tqdm.pandas()
 
 from datasets import load_dataset, Dataset
 
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, set_seed, BitsAndBytesConfig
 
 from experiments.utils.eval_metrics import em_compute, meteor_compute, bleu_compute, rouge_compute
 
 import os
 
 # config
+set_seed(42)
 checkpoint = "bigcode/starcoder2-15b"
 fine_tuned_model = "AISE-TUDelft/StarCoder2Java-15b_ep3"
 p_names = ["bf16", "i8", "i4"]

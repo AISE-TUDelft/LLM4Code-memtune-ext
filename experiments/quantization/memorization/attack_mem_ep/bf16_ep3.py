@@ -4,7 +4,7 @@ import torch
 
 from datasets import load_dataset, Dataset
 
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, set_seed
 
 from experiments.utils.eval_metrics import em_compute, meteor_compute, bleu_compute, rouge_compute
 
@@ -17,6 +17,7 @@ tqdm.pandas()
 import os
 
 # config
+set_seed(42)
 checkpoint = "bigcode/starcoder2-15b"
 fine_tuned_model = "AISE-TUDelft/StarCoder2Java-15b_ep3"
 
