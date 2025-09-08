@@ -57,11 +57,11 @@ def main():
     """Run all experiments in sequence."""
     
     scripts = [
-        'bf16_ep0.py',   # Creates initial parquet
-        'bf16_ep3.py',   # Adds bf16_ep3 columns
-        'i8_ep0.py',     # Adds i8_ep0 columns
-        'i8_ep3.py',     # Adds i8_ep3 columns
-        'i4_ep0.py',     # Adds i4_ep0 columns
+#        'bf16_ep0.py',   # Creates initial parquet
+#        'bf16_ep3.py',   # Adds bf16_ep3 columns
+#        'i8_ep0.py',     # Adds i8_ep0 columns
+#        'i8_ep3.py',     # Adds i8_ep3 columns
+#        'i4_ep0.py',     # Adds i4_ep0 columns
         'i4_ep3.py'      # Adds i4_ep3 columns
     ]
     

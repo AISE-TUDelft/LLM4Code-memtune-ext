@@ -65,13 +65,13 @@ gen_name_2 = p_name + epoch + deduplication[1]
 gen_name_3 = p_name + epoch + deduplication[2]
 gen_name_g3 = p_name + epoch + deduplication[3]
 # perform the data extraction attacks
-gs_mem_1 = pipe(df_1[p_length], batch_size=32)
+gs_mem_1 = pipe(list(df_1[p_length]), batch_size=32)
 print('1 done')
-gs_mem_2 = pipe(df_2[p_length], batch_size=32)
+gs_mem_2 = pipe(list(df_2[p_length]), batch_size=32)
 print('2 done')
-gs_mem_3 = pipe(df_3[p_length], batch_size=32)
+gs_mem_3 = pipe(list(df_3[p_length]), batch_size=32)
 print('3 done')
-gs_mem_g3 = pipe(df_g3[p_length], batch_size=32)
+gs_mem_g3 = pipe(list(df_g3[p_length]), batch_size=32)
 print('g3 done')
 torch.cuda.empty_cache()
 

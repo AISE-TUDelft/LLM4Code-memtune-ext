@@ -52,12 +52,12 @@ pipe = pipeline("text-generation", model = model, tokenizer = tokenizer, framewo
 gen_name = p_name + epoch
 
 # perform the data extraction attacks
-gs_mem = pipe(df[p_length], batch_size=32)
+gs_mem = pipe(list(df[p_length]), batch_size=32)
 print('attack done')
 torch.cuda.empty_cache()
 
 # save the result
-df = df.add_column(gen_name, [gs_mem[i][0]['generated_text'][len(df[p_length][i]):]  for i,_ in enumerate(df)])
+df = df.add_column(gen_name, [gs_mem[i][0]['generated_text'][len(list(df[p_length])[i]):]  for i,_ in enumerate(df)])
 
 # compute the evaluation metrics
 em = gen_name + '_em'
