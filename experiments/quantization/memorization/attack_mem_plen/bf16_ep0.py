@@ -50,13 +50,13 @@ gen_name_150 = p_name + epoch + plen[1]
 gen_name_200 = p_name + epoch + plen[2]
 gen_name_250 = p_name + epoch + plen[3]
 # perform the data extraction attacks
-gs_mem_100 = pipe(df['prefix_100'], batch_size=32)
+gs_mem_100 = pipe(list(df['prefix_100']), batch_size=32)
 print('100 done')
-gs_mem_150 = pipe(df['prefix_150'], batch_size=32)
+gs_mem_150 = pipe(list(df['prefix_150']), batch_size=32)
 print('150 done')
-gs_mem_200 = pipe(df['prefix_200'], batch_size=32)
+gs_mem_200 = pipe(list(df['prefix_200']), batch_size=32)
 print('200 done')
-gs_mem_250 = pipe(df['prefix_250'], batch_size=32)
+gs_mem_250 = pipe(list(df['prefix_250']), batch_size=32)
 print('250 done')
 torch.cuda.empty_cache()
 
