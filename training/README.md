@@ -15,6 +15,7 @@
   - StarCoder2-3B: 2 GPUs
   - StarCoder2-7B: 4 GPUs
   - StarCoder2-15B: 6 GPUs
+  - StarCoder2-7B LoRA: 2 GPUs
 
 ### Software Stack
 - NVIDIA Driver: 555.42.02
@@ -36,6 +37,7 @@ Approximate training times per model:
 - StarCoder2-3B: 25 hours
 - StarCoder2-7B: 55 hours
 - StarCoder2-15B: 110 hours
+- StarCoder2-7B LoRA: 20 hours
 
 ## Training Process
 - Training duration: 3 epochs
@@ -80,3 +82,14 @@ Training was conducted using resources provided by the [Delft High-Performance C
 
 **Learning rate**:
 ![](/training/train-stats/StarCoder2-15B/train-learning_rate.png)
+
+### StarCoder2-7B Lora
+
+**Evaluation loss**:
+![](/training/train-stats/StarCoder2-7B-lora/eval-loss.png)
+
+**Training loss**:
+![](/training/train-stats/StarCoder2-7B-lora/train-loss.png)
+
+**Learning rate**:
+![](/training/train-stats/StarCoder2-7B-lora/train-learning_rate.png)
