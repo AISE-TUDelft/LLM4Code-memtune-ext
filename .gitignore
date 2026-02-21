@@ -216,4 +216,8 @@ __marimo__/
 ehthumbs.db
 Thumbs.db
 
+.idea/
+
 CLAUDE.md
+agent.md
+memory/
