@@ -23,10 +23,10 @@ Setting the variables.
 """
 set_seed(42)
 
-wproject = "name" # wb project name
-run_name = "run_name" # name of the W&B run (optional)
+wproject = "Mellum4b" # wb project name
+run_name = "Mellum4bTest" # name of the W&B run (optional)
 # training batches
-batch = 8
+batch = 2
 # Load base-model and tokenizer from HF-hub
 checkpoint = "JetBrains/Mellum-4b-base"
 # Select the column of interest from the dataset
@@ -39,19 +39,21 @@ device_map = 'auto'
 
 #wandb setup
 import wandb
-wandb.login()
 os.environ["WANDB_PROJECT"] = wproject # wandb project name
+os.environ["WANDB_MODE"] = "offline"
+wandb.login()
 
 """
 Loading the model and tokenizer
 """
 # tokenizer
-tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+tokenizer = AutoTokenizer.from_pretrained(checkpoint, local_files_only=True)
 tokenizer.pad_token = tokenizer.eos_token # setting the pad token to the end of sequence token
 
 # model
 model = AutoModelForCausalLM.from_pretrained(
     checkpoint,
+    local_files_only = True,
     device_map= device_map)
 
 
@@ -90,7 +92,7 @@ overwrite_output_dir= False
 
 per_device_train_batch_size = batch
 per_device_eval_batch_size = batch
-gradient_accumulation_steps = 3
+gradient_accumulation_steps = 6
 
 optim = "adafactor"
 adam_beta1 = 0.9
