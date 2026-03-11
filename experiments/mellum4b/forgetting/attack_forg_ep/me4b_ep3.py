@@ -20,7 +20,7 @@ import os
 set_seed(42)
 
 checkpoint = "JetBrains/Mellum-4b-base"
-fine_tuned_model = "AISE-TUDelft/MellumJava-4b_ep3"
+fine_tuned_model = "AISE-TUDelft/MellumJava_ep3"
 p_name = "me4b"
 
 epochs = ['_ep0', '_ep1', '_ep2', '_ep3']
