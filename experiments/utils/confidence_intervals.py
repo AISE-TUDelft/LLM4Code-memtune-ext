@@ -140,6 +140,46 @@ def summarize_metrics_with_ci(
     return pd.DataFrame(out, index=list(row_values))
 
 
+def summarize_metrics_with_ci_from_values(
+    row_values: Sequence[str],
+    metrics: Sequence[str],
+    values_fn: Callable[[str, str], Iterable[float]],
+    alpha: float = 0.05,
+    n_resamples: int = 10000,
+    random_state: int = 42,
+    em_metrics: Sequence[str] = ("em",),
+    ci_suffix: str = "_ci",
+) -> pd.DataFrame:
+    """
+    Build a metric + CI table from a custom value getter.
+
+    `values_fn(row_value, metric)` must return the raw samples for that cell.
+    """
+    out: dict[str, list[object]] = {}
+
+    for metric_idx, metric in enumerate(metrics):
+        means: list[float] = []
+        cis: list[list[float]] = []
+
+        for row_idx, row_value in enumerate(row_values):
+            seed = random_state + metric_idx * 10_000 + row_idx
+            mean_value, ci = metric_mean_and_ci(
+                values_fn(row_value, metric),
+                metric_name=metric,
+                alpha=alpha,
+                n_resamples=n_resamples,
+                random_state=seed,
+                em_metrics=em_metrics,
+            )
+            means.append(mean_value)
+            cis.append(ci)
+
+        out[metric] = means
+        out[f"{metric}{ci_suffix}"] = cis
+
+    return pd.DataFrame(out, index=list(row_values))
+
+
 def round_metrics_with_ci_table(
     table: pd.DataFrame,
     decimals: int = 3,
