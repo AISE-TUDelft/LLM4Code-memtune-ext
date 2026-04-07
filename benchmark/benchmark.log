@@ -1,0 +1,112 @@
+Starting HumanEval-X Java generation — all 8 models
+Total scripts: 8
+Started at: 2026-03-15 13:12:50
+
+Progress: 1/8
+
+============================================================
+Starting sc2_3b_base.py at 2026-03-15 13:12:50
+============================================================
+
+Completed sc2_3b_base.py in 284.8s
+Last output:
+  Generation done
+  Results saved to /workspace/benchmark/generations/starcoder2-3b/generations.jsonl
+  ---- End starcoder2-3b ----
+
+Progress: 2/8
+
+============================================================
+Starting sc2_3b_ep3.py at 2026-03-15 13:17:35
+============================================================
+
+Completed sc2_3b_ep3.py in 314.3s
+Last output:
+  Generation done
+  Results saved to /workspace/benchmark/generations/StarCoder2Java-3b_ep3/generations.jsonl
+  ---- End StarCoder2Java-3b_ep3 ----
+
+Progress: 3/8
+
+============================================================
+Starting sc2_7b_base.py at 2026-03-15 13:22:49
+============================================================
+
+Completed sc2_7b_base.py in 493.8s
+Last output:
+  Generation done
+  Results saved to /workspace/benchmark/generations/starcoder2-7b/generations.jsonl
+  ---- End starcoder2-7b ----
+
+Progress: 4/8
+
+============================================================
+Starting sc2_7b_ep3.py at 2026-03-15 13:31:03
+============================================================
+
+Completed sc2_7b_ep3.py in 515.2s
+Last output:
+  Generation done
+  Results saved to /workspace/benchmark/generations/StarCoder2Java-7b_ep3/generations.jsonl
+  ---- End StarCoder2Java-7b_ep3 ----
+
+Progress: 5/8
+
+============================================================
+Starting sc2_15b_base.py at 2026-03-15 13:39:38
+============================================================
+
+Completed sc2_15b_base.py in 1024.8s
+Last output:
+  Generation done
+  Results saved to /workspace/benchmark/generations/starcoder2-15b/generations.jsonl
+  ---- End starcoder2-15b ----
+
+Progress: 6/8
+
+============================================================
+Starting sc2_15b_ep3.py at 2026-03-15 13:56:43
+============================================================
+
+Completed sc2_15b_ep3.py in 1109.7s
+Last output:
+  Generation done
+  Results saved to /workspace/benchmark/generations/StarCoder2Java-15b_ep3/generations.jsonl
+  ---- End StarCoder2Java-15b_ep3 ----
+
+Progress: 7/8
+
+============================================================
+Starting mellum_4b_base.py at 2026-03-15 14:15:13
+============================================================
+
+Completed mellum_4b_base.py in 322.4s
+Last output:
+  Generation done
+  Results saved to /workspace/benchmark/generations/Mellum-4b-base/generations.jsonl
+  ---- End Mellum-4b-base ----
+
+Progress: 8/8
+
+============================================================
+Starting mellum_4b_ep3.py at 2026-03-15 14:20:35
+============================================================
+
+Completed mellum_4b_ep3.py in 365.9s
+Last output:
+  Generation done
+  Results saved to /workspace/benchmark/generations/MellumJava_ep3/generations.jsonl
+  ---- End MellumJava_ep3 ----
+
+All experiments completed successfully!
+Total time: 4430.8s (73.8 minutes)
+
+Results saved in:
+  benchmark/generations/starcoder2-3b/generations.jsonl
+  benchmark/generations/StarCoder2Java-3b_ep3/generations.jsonl
+  benchmark/generations/starcoder2-7b/generations.jsonl
+  benchmark/generations/StarCoder2Java-7b_ep3/generations.jsonl
+  benchmark/generations/starcoder2-15b/generations.jsonl
+  benchmark/generations/StarCoder2Java-15b_ep3/generations.jsonl
+  benchmark/generations/Mellum-4b-base/generations.jsonl
+  benchmark/generations/MellumJava_ep3/generations.jsonl
